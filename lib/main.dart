@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -23,17 +24,8 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+
   List<Map<String, String>> arrdata = [
-    {
-      'image': 'https://www.eshaistic.pk/wp-content/uploads/2022/09/Golden-Pearl-Hair-Oil.jpg',
-      'name': 'Golden Pearl Hair Oil',
-      'price': 'PKR : 460',
-    },
-    {
-      'image': 'https://fairo.pk/wp-content/uploads/2020/10/almond-and-honey.jpg',
-      'name': 'Golden Pearl Extra ',
-      'price': 'PKR : 350',
-    },
     {
       'image':
       'https://tse3.mm.bing.net/th?id=OIP.7iXzGQl1x6QBS_IjMSsz-AHaHa&pid=Api&P=0&h=220',
@@ -41,28 +33,27 @@ class _MyHomeState extends State<MyHome> {
       'price': 'PKR : 600',
     },
     {
-      'image': 'https://tse3.mm.bing.net/th?id=OIP.oG7ho5hlCOfFbUfC7wQCfAHaHa&pid=Api&P=0&h=220',
+      'image':
+      'https://tse3.mm.bing.net/th?id=OIP.oG7ho5hlCOfFbUfC7wQCfAHaHa&pid=Api&P=0&h=220',
       'name': 'Golden Pearl Body Spray',
       'price': 'PKR : 840',
     },
     {
-      'image': 'https://tse1.mm.bing.net/th?id=OIP.zwdJzIw5zOIJkHspMQ7iGwHaHa&pid=Api&P=0&h=220',
+      'image':
+      'https://tse1.mm.bing.net/th?id=OIP.zwdJzIw5zOIJkHspMQ7iGwHaHa&pid=Api&P=0&h=220',
       'name': 'White background product',
       'price': 'PKR : 780',
     },
     {
-      'image': 'https://static-01.daraz.pk/p/eca44130118d9707d7f29f2b70adf0f8.jpg',
+      'image':
+      'https://static-01.daraz.pk/p/eca44130118d9707d7f29f2b70adf0f8.jpg',
       'name': 'BAKHOOR BODY WASH 250ML',
       'price': 'PKR : 930',
     },
     {
-      'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiwrOZz0Iz0mLPE8erVoMAskwKFgoKk6l2Eg&usqp=CAU',
+      'image':
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiwrOZz0Iz0mLPE8erVoMAskwKFgoKk6l2Eg&usqp=CAU',
       'name': ' Body Wash Delicate Touch 500ml',
-      'price': 'PKR : 1150',
-    },
-    {
-      'image': 'https://media.naheed.pk/catalog/product/cache/49dcd5d85f0fa4d590e132d0368d8132/1/1/1183017-1.jpg',
-      'name': '  Magical Comfort Body Wash, 500ml',
       'price': 'PKR : 1150',
     },
   ];
@@ -71,22 +62,31 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white38,
-      drawer: Container(
-        child: Drawer(
-          backgroundColor: Colors.deepOrange,
-          width: 200,
-        ),
-      ),
+
       appBar: AppBar(
+        leading: IconButton(onPressed: (){
+        }, icon: Icon(Icons.shopping_cart)),
         backgroundColor: Colors.white70,
         title: Center(
-          child: Text(
-            "E-commerce Store",
-            style: TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.black,
-              fontSize: 20,
-            ),
+          child: Column(
+            children: [
+              Text(
+                "Sohail Khan",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+              ),
+              Text(
+                "E-commerce Store",
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                  fontSize: 20,
+                ),
+              ),
+            ],
           ),
         ),
         actions: [
@@ -107,6 +107,7 @@ class _MyHomeState extends State<MyHome> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
               SizedBox(
                 height: 20,
               ),
@@ -116,7 +117,9 @@ class _MyHomeState extends State<MyHome> {
                   decoration: InputDecoration(
                     labelText: "Search",
                     prefixIcon: Icon(Icons.search_sharp),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     hintText: "Search Any Product",
                   ),
                 ),
@@ -131,9 +134,10 @@ class _MyHomeState extends State<MyHome> {
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.pinkAccent,
                   image: DecorationImage(
-                      image: NetworkImage("https://tse2.mm.bing.net/th?id=OIP.RaoNOjhR-10yEYwpD-VlMAHaEK&pid=Api&P=0&h=220"),
-                  fit: BoxFit.cover
-                  )
+                    image: NetworkImage(
+                        "https://tse2.mm.bing.net/th?id=OIP.RaoNOjhR-10yEYwpD-VlMAHaEK&pid=Api&P=0&h=220"),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               SizedBox(
@@ -151,7 +155,10 @@ class _MyHomeState extends State<MyHome> {
                       onPressed: () {},
                       child: Text(
                         "All",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
@@ -165,7 +172,10 @@ class _MyHomeState extends State<MyHome> {
                       onPressed: () {},
                       child: Text(
                         "Popular",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
@@ -179,7 +189,10 @@ class _MyHomeState extends State<MyHome> {
                       onPressed: () {},
                       child: Text(
                         "Recent",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
@@ -193,7 +206,10 @@ class _MyHomeState extends State<MyHome> {
                       onPressed: () {},
                       child: Text(
                         "Recommended",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
@@ -237,6 +253,37 @@ class _MyHomeState extends State<MyHome> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+         margin: EdgeInsets.symmetric(horizontal: 40),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.red
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                icon: Icon(Icons.home),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.person),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      ),
+
     );
   }
 }
