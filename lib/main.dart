@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:ecommerce/homesreen.dart';
-import 'package:ecommerce/product.dart';
+import 'package:ecommerce/login.dart';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      home: Splash(),
+      home: Login(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -29,29 +31,22 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
- @override
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 4), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHome(),));
+    Timer(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MyHome(),));
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Container(
-          width: 190,
-          height: 120,
-          child: Center(child: Text("Modassir",style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 34,
-          ),)),
-        ),
-      ),
+    return Container(
+      width: 190,
+      height: 120,
+      child: Center(child: Lottie.asset("images/lottie.json")),
     );
   }
 }
-
-

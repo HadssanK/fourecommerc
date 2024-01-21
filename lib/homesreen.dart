@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+
 class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
 
@@ -7,121 +9,173 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-
   List<Map<String, String>> arrdata = [
     {
-      'image': 'https://www.eshaistic.pk/wp-content/uploads/2022/09/Golden-Pearl-Hair-Oil.jpg',
+      'image':
+      'images/img1.jpeg',
       'name': 'Golden Pearl Hair Oil',
       'price': 'PKR : 460',
     },
     {
-      'image': 'https://fairo.pk/wp-content/uploads/2020/10/almond-and-honey.jpg',
+      'image':
+      'images/img2.jpeg',
       'name': 'Golden Pearl Extra ',
       'price': 'PKR : 350',
     },
     {
       'image':
-      'https://tse3.mm.bing.net/th?id=OIP.7iXzGQl1x6QBS_IjMSsz-AHaHa&pid=Api&P=0&h=220',
+      'images/img3.jpeg',
       'name': 'Cosmetics Manufacture',
       'price': 'PKR : 600',
     },
     {
-      'image': 'https://tse3.mm.bing.net/th?id=OIP.oG7ho5hlCOfFbUfC7wQCfAHaHa&pid=Api&P=0&h=220',
+      'image':
+      'images/img4.jpeg',
       'name': 'Golden Pearl Body Spray',
       'price': 'PKR : 840',
     },
     {
-      'image': 'https://tse1.mm.bing.net/th?id=OIP.zwdJzIw5zOIJkHspMQ7iGwHaHa&pid=Api&P=0&h=220',
+      'image':
+      'images/img5.jpeg',
       'name': 'White background',
       'price': 'PKR : 780',
     },
     {
-      'image': 'https://static-01.daraz.pk/p/eca44130118d9707d7f29f2b70adf0f8.jpg',
+      'image':
+      'images/img6.jpeg',
       'name': 'BAKHOOR BODY WASH ',
       'price': 'PKR : 930',
     },
     {
-      'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiwrOZz0Iz0mLPE8erVoMAskwKFgoKk6l2Eg&usqp=CAU',
+      'image':
+      'images/img2.jpeg',
       'name': ' Body Wash Delicate ',
       'price': 'PKR : 1150',
     },
     {
-      'image': 'https://media.naheed.pk/catalog/product/cache/49dcd5d85f0fa4d590e132d0368d8132/1/1/1183017-1.jpg',
+      'image':
+      'images/img1.jpeg',
       'name': '   Comfort Body Wash',
       'price': 'PKR : 1150',
     },
   ];
-  @override
+  List slider = [
+    'images/b1.jpg',
+    'images/b2.jpg',
+    'images/b3.jpg',
+    'images/b4.jpg',
+    'images/5.jpg',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white38,
-      drawer: Container(
-        child: Drawer(
-          backgroundColor: Colors.deepOrange,
-          width: 200,
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.white70,
-        title: Center(
-          child: Text(
-            "E-commerce Store",
-            style: TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.black,
-              fontSize: 20,
-            ),
-          ),
-        ),
-        actions: [
 
-          SizedBox(width: 20),
-          CircleAvatar(
-            backgroundImage: NetworkImage(
-              "https://tse1.mm.bing.net/th?id=OIP.ATotYQF0JM8XlgNCKFa_WgHaE8&pid=Api&P=0&h=220",
-            ),
-          ),
-          SizedBox(width: 20),
-        ],
-      ),
+
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+          margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Center(child: Text("SOHAIL KHAN")),
+
+             Center(
+               child: Container(
+
+                 child: Row(
+                   children: [
+                     Container(
+                       width: 40,
+                       height: 40,
+                       decoration: BoxDecoration(
+                           color: Colors.black12,
+
+
+                           borderRadius: BorderRadius.circular(13)
+                       ),
+                       child: Icon(
+                           Icons.scoreboard_outlined),
+                     ),
+
+                     Container(
+                         margin: EdgeInsets.only(left: 70),
+
+
+                         child: Text("E-Commerce",style: TextStyle(
+                           fontWeight: FontWeight.w700,
+                           fontSize: 20
+                         ),)),
+                     Container(
+                       margin: EdgeInsets.only(left: 70),
+                       child: CircleAvatar(
+                         backgroundImage: NetworkImage("https://tse1.mm.bing.net/th?id=OIP._R1EuUG2DxThtrVuKGuPgAHaFc&pid=Api&P=0&h=220"),
+                       ),
+                     )
+                   ],
+                 ),
+               ),
+             ),
+
               SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 40,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "Search",
-                    prefixIcon: Icon(Icons.search_sharp),
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-                    hintText: "Search Any Product",
-                  ),
-                ),
-              ),
+             Container(
+
+                 child: Row(
+                   children: [
+                     Container(
+                       width: 280,
+                       height: 40,
+                       child: SearchBar(
+                      hintText: "Search",
+                         leading: Icon(Icons.search),
+                       ),
+                     ),
+                     SizedBox(width: 15),
+                     Container(
+                       width: 40,
+                         height: 40,
+                         decoration: BoxDecoration(
+                           color: Colors.pinkAccent,
+                           borderRadius: BorderRadius.circular(13)
+                         ),
+                         child: Icon(
+                         Icons.swap_horiz_outlined),
+                     )
+                   ],
+                 )),
               SizedBox(
                 height: 20,
               ),
-              Container(
-                width: double.infinity,
-                height: 160,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.pinkAccent,
-                    image: DecorationImage(
-                        image: NetworkImage("https://tse2.mm.bing.net/th?id=OIP.RaoNOjhR-10yEYwpD-VlMAHaEK&pid=Api&P=0&h=220"),
-                        fit: BoxFit.cover
-                    )
+              CarouselSlider(
+                options: CarouselOptions(
+                  // height: 500,
+                  autoPlay: true,
+                  enlargeCenterPage: true,
                 ),
+                items: slider.map((images) {
+                  return Builder(
+                    builder: (context) {
+                      return Container(
+                        width: 600,
+                        // margin: EdgeInsets.symmetric(horizontal: 20),
+                        decoration: BoxDecoration(
+                   
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage(images.toString()))
+                        ),
+                      );
+                    },
+                  );
+                },).toList(),
               ),
+
+
               SizedBox(
                 height: 16,
               ),
@@ -130,57 +184,67 @@ class _MyHomeState extends State<MyHome> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.black12,
+
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
                         "All",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),
                   SizedBox(width: 10),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.black12,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextButton(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       child: Text(
                         "Popular",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),
                   SizedBox(width: 10),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.black12,
+
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
                         "Recent",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),
                   SizedBox(width: 10),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.black12,
+
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
                         "Recommended",
-                        style: TextStyle(color: Colors.black87, fontWeight: FontWeight.w500),
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.w500),
                       ),
                     ),
                   ),
@@ -226,7 +290,31 @@ class _MyHomeState extends State<MyHome> {
           ),
         ),
       ),
+      bottomNavigationBar:BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+
+        iconSize: 30,
+        items: [
+          BottomNavigationBarItem(
+            label: "Home",
+            icon: Icon(Icons.home),
+
+          ),
+          BottomNavigationBarItem(
+            label: "Search",
+            icon: Icon(Icons.search),
+          ),
+          BottomNavigationBarItem(
+            label: "Categories",
+            icon: Icon(Icons.grid_view),
+          ),
+          BottomNavigationBarItem(
+            label: "My Account",
+            icon: Icon(Icons.account_circle_outlined),
+          ),
+        ],
+      ),
+
     );
   }
 }
-
