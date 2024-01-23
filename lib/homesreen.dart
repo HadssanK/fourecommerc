@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce/account.dart';
 import 'package:flutter/material.dart';
 
 class MyHome extends StatefulWidget {
@@ -306,11 +307,13 @@ class _MyHomeState extends State<MyHome> {
           ),
           BottomNavigationBarItem(
             label: "Categories",
-            icon: Icon(Icons.grid_view),
+            icon: Icon(Icons.shopping_cart),
           ),
           BottomNavigationBarItem(
             label: "My Account",
-            icon: Icon(Icons.account_circle_outlined),
+            icon: IconButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Account(),));
+            }, icon: Icon(Icons.account_circle_outlined)),
           ),
         ],
       ),

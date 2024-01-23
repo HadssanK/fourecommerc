@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:ecommerce/homesreen.dart';
-import 'package:ecommerce/login.dart';
+import 'package:ecommerce/account.dart';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return MaterialApp(
-      home: Login(),
+      home: Account(),
       debugShowCheckedModeBanner: false,
     );
   }
