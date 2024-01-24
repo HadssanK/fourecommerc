@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:ecommerce/homesreen.dart';
 import 'package:ecommerce/account.dart';
+import 'package:ecommerce/main_navbar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -16,8 +17,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      home: Account(),
+    return const MaterialApp(
+      home: MainNavbar(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -35,9 +36,9 @@ class _SplashState extends State<Splash> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MyHome(),));
+          context, MaterialPageRoute(builder: (context) => const MyHome(),));
     });
   }
 
